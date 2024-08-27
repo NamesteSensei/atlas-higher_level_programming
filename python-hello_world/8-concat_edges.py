@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-str = "object-oriented programming with Python"
-print(str[0:18] + str[18:34] + str[34:] + '\n')
+print("object-oriented programming with Python"[0:6] + "object-oriented programming with Python"[7:18] + "object-oriented programming with Python"[19:34] + "object-oriented programming with Python"[34:])
 
