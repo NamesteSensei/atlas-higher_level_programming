@@ -6,3 +6,4 @@ for i in range(97, 123):
     if chr(i) not in "eq":
         # Print the character corresponding to the current ASCII value without a newline
         print("{}".format(chr(i)), end="")
+
