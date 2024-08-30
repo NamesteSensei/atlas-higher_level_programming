@@ -1,8 +1,6 @@
 #!/usr/bin/python3
+# Script to print the alphabet except 'q' and 'e' without a newline
 
-# Loop through ASCII values for lowercase letters 'a' to 'z'
-for i in range(97, 123):
-    # Check if the current character is not 'e' (ASCII 101) and not 'q' (ASCII 113)
-    if i != 101 and i != 113:
-        # Print the character corresponding to the current ASCII value without a newline
-        print("{}".format(chr(i)), end="")
+for i in range(97, 123):  # ASCII values from 97 ('a') to 122 ('z')
+    if i != 101 and i != 113:  # Skip ASCII values for 'e' (101) and 'q' (113)
+        print("{}".format(chr(i)), end="")  # Print character without newline
