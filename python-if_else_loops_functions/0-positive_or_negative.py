@@ -9,4 +9,3 @@ elif number == 0:
     print(f"{number} is zero")      # Zero case
 else:
     print(f"{number} is negative")  # Negative number case
-
