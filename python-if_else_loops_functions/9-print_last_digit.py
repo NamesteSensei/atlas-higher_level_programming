@@ -4,9 +4,7 @@
 def print_last_digit(number):
     # Calculate the last digit (handle negative numbers too)
     last_digit = abs(number) % 10
-    
     # Print the last digit
     print("{}".format(last_digit), end="")
-    
     # Return the last digit
     return last_digit
