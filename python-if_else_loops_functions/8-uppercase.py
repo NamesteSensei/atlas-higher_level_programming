@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 # Function to convert a string to uppercase
+
 def uppercase(str):
     # Initialize an empty string to store the result
     result = ""
