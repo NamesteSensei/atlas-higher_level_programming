@@ -14,6 +14,6 @@ def uppercase(str):
         else:
             # If it's not lowercase, keep the character as is
             result += char
-    
+
     # Print the result followed by a new line
     print("{}".format(result))
