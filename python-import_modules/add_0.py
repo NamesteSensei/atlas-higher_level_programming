@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-def add(a, b):
-    """My addition function
+if __name__ == "__main__":
+    # Importing the add function from add_0 module
+    from add_0 import add  # "add_0" appears only once here
 
-    Args:
-        a: first integer
-        b: second integer
+    # Assign values to variables
+    a = 1  # a is assigned the value 1
+    b = 2  # b is assigned the value 2
 
-    Returns:
-        The return value. a + b
-    """
-    return (a + b)
+    # Print the result of the addition using string formatting
+    print("{} + {} = {}".format(a, b, add(a, b)))  # This prints: "1 + 2 = 3"
