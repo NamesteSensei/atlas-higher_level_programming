@@ -9,3 +9,4 @@ b = 2
 
 # Print the result using the print function with string formatting
 print(f"{a} + {b} = {add(a, b)}")
+
