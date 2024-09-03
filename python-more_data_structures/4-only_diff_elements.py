@@ -7,5 +7,5 @@ def only_diff_elements(set_1, set_2):
     :param set_2: Second set of elements
     :return: A set of elements present in only one set
     """
-    # Use the symmetric difference operator ^ to get elements present in only one set
+
     return set_1 ^ set_2
