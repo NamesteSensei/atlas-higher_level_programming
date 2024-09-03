@@ -5,6 +5,5 @@ def print_sorted_dictionary(a_dictionary):
 
     :param a_dictionary: The dictionary to print
     """
-    # Iterate through sorted keys and print them with their corresponding values
     for key in sorted(a_dictionary.keys()):
         print("{}: {}".format(key, a_dictionary[key]))
