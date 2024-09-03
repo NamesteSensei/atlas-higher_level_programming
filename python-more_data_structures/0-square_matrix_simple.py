@@ -1,3 +1,5 @@
+ #!/usr/bin/python3
+
 def square_matrix_simple(matrix=[]):
     """
     This function returns a new matrix where each element is the square
