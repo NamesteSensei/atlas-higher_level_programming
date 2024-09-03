@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def print_list_integer(my_list=[]):
     """
     Function that prints each integer in the list on a new line.
