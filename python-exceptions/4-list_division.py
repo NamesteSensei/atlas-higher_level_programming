@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     """
-    Divides elements of my_list_1 by my_list_2 up to list_length, handling various exceptions.
+    Divides elements of my_list_1 by my_list_2 up to list_length, handling
+    various exceptions.
 
     :param my_list_1: First list (numerators)
     :param my_list_2: Second list (denominators)
@@ -22,5 +23,5 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             result = 0
         finally:
-            result_list.append(result)  # Always append the result in the finally block
+            result_list.append(result)
     return result_list
