@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module defines a class Square with size validation,
-getter, and setter for the size attribute.
+getter, setter, and area calculation.
 """
 
 
@@ -41,9 +41,4 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
 
-    def area(self):
-        """Returns the area of the square."""
-        return self.__size ** 2
