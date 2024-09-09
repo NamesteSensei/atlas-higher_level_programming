@@ -29,7 +29,8 @@ def add_integer(a, b=98):
         raise ValueError("cannot convert float NaN to integer")
 
     # Check for float overflow (infinity)
-    if a == float('inf') or b == float('inf') or a == -float('inf') or b == -float('inf'):
+    if (a == float('inf') or b == float('inf') or
+            a == -float('inf') or b == -float('inf')):
         raise OverflowError("float value too large")
     
     return int(a) + int(b)
