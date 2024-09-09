@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Module for Square class.
-This module provides a simple implementation of a Square with a private size attribute.
+This module provides a simple implementation of a Square
+with a private size attribute.
 """
 
 
@@ -16,4 +17,3 @@ class Square:
             size (int): The size of the square.
         """
         self.__size = size  # Private instance attribute '__size'
-
