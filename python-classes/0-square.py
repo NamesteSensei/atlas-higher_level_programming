@@ -1,10 +1,24 @@
 #!/usr/bin/python3
 """
-Module for Square class.
-This module defines an empty class Square that serves as a blueprint for future tasks.
+Module for defining the Square class.
+This module defines a class Square with a private size attribute.
 """
 
 
 class Square:
-    """Represents an empty square."""
-    pass  # Empty class, will be expanded in later tasks               
+    """
+    Represents a square with a private instance attribute 'size'.
+    
+    Attributes:
+        __size (int): The size of the square (no type/value validation).
+    """
+
+    def __init__(self, size):
+        """
+        Initializes a Square instance with the given size.
+
+        Args:
+            size (int): The size of the square.
+        """
+        self.__size = size  # Private ins
+
