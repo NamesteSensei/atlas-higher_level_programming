@@ -7,5 +7,4 @@ This module defines an empty class Square that serves as a blueprint for future 
 
 class Square:
     """Represents an empty square."""
-    pass  # Empty class, will be expanded in later tasks
-
+    pass  # Empty class, will be expanded in later tasks               
