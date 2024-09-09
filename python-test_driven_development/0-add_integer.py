@@ -3,6 +3,7 @@
 This module provides a function to add two integers.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two integers or floats and returns the sum as an integer.
@@ -23,7 +24,7 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    
+
     # Check for NaN values
     if a != a or b != b:  # NaN check
         raise ValueError("cannot convert float NaN to integer")
@@ -32,5 +33,5 @@ def add_integer(a, b=98):
     if (a == float('inf') or b == float('inf') or
             a == -float('inf') or b == -float('inf')):
         raise OverflowError("float value too large")
-    
+
     return int(a) + int(b)
