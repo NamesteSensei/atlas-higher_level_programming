@@ -1,4 +1,11 @@
 #!/usr/bin/python3
-# Define an empty clas called Square
+"""
+Module for Square class.
+This module defines an empty class Square that serves as a blueprint for future tasks.
+"""
+
+
 class Square:
-    pass # Placeholder, since the class is currently empty
+    """Represents an empty square."""
+    pass  # Empty class, will be expanded in later tasks
+
