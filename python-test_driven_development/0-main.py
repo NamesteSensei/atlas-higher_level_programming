@@ -15,3 +15,13 @@ try:
     print(add_integer(None))         # Should raise a TypeError
 except Exception as e:
     print(e)
+
+try:
+    print(add_integer(float('NaN'), 1))  # Should raise a ValueError
+except Exception as e:
+    print(e)
+
+try:
+    print(add_integer(float('inf'), 1))  # Should raise an OverflowError
+except Exception as e:
+    print(e)
