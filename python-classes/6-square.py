@@ -10,15 +10,16 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initialize a Square instance with a private size and position attributes.
+        Initialize a Square instance with private size and position attributes.
 
         Args:
             size (int): The size of the square (default is 0).
-            position (tuple): The position to print the square (default is (0, 0)).
+            position (tuple): The position to print the square
+                              (default is (0, 0)).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of
-                       2 positive integers.
+            TypeError: If size is not an integer or position is not a tuple
+                       of 2 positive integers.
             ValueError: If size is less than 0.
         """
         self.size = size
@@ -83,7 +84,8 @@ class Square:
         Prints the square using the # character.
 
         If size is 0, it prints an empty line.
-        The square is printed at the position specified by the `position` attribute.
+        The square is printed at the position specified by the `position`
+        attribute.
         """
         if self.__size == 0:
             print("")
