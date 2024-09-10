@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+This module contains the function `print_square(size)`.
+
+The `print_square` function prints a square of a given size using the '#' character.
+The function raises a `TypeError` if the size is not an integer and a `ValueError`
+if the size is negative.
+"""
+
 def print_square(size):
     """
     Prints a square with the character '#'.
