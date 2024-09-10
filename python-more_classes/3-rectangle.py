@@ -8,6 +8,8 @@ its width and height.
 class Rectangle:
     """
     A class used to represent a Rectangle.
+    
+    Attributes
     ----------
     width : int
         The width of the rectangle, must be a non-negative integer.
@@ -15,18 +17,22 @@ class Rectangle:
         The height of the rectangle, must be a non-negative integer.
     
     Methods
+    -------
+    area():
         Returns the area of the rectangle.
     perimeter():
         Returns the perimeter of the rectangle.
     __str__():
         Provides a string representation of the rectangle using '#'.
     __repr__():
-        Provides a string representation in the format used for object memory addresses.
+        Provides a string representation in the format used for
+        object memory addresses.
     """
 
     def __init__(self, width=0, height=0):
         """
         Initializes a Rectangle object with optional width and height.
+
         Parameters
         ----------
         width : int, optional
@@ -73,6 +79,8 @@ class Rectangle:
         """Calculates and returns the perimeter of the rectangle.
         
         Returns 0 if either width or height is 0.
+        """
+        if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
 
@@ -85,7 +93,8 @@ class Rectangle:
     def __repr__(self):
         """Returns a string representation with module and class name.
         
-        The format should be: <3-rectangle.Rectangle object at memory_address>
+        The format should be: <3-rectangle.Rectangle object at
+        memory_address>
         """
         return f"<3-rectangle.Rectangle object at {hex(id(self))}>"
 
