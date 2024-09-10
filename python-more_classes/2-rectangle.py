@@ -10,10 +10,11 @@ class Rectangle:
         height (int): The height of the rectangle.
     
     Methods:
-        area(): Returns the area of the rectangle.
-        perimeter(): Returns the perimeter of the rectangle.
+        __init__(self, width, height): Initializes the rectangle.
+        area(self): Returns the area of the rectangle.
+        perimeter(self): Returns the perimeter of the rectangle.
     """
-
+    
     def __init__(self, width=0, height=0):
         """
         Initializes the rectangle with optional width and height parameters.
@@ -101,3 +102,4 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0  # If either width or height is 0, perimeter is 0.
         return 2 * (self.__width + self.__height)  # Calculate perimeter.
+
