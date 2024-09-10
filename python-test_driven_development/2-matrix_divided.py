@@ -18,6 +18,7 @@ def matrix_divided(matrix, div):
         TypeError: If the matrix is not a list of lists of integers/floats,
                    if the rows are not the same size, or if div is not a number.
         ZeroDivisionError: If div is zero.
+        ValueError: If the matrix contains NaN or infinity.
     """
     # Check if matrix is a list of lists containing integers or floats
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
@@ -28,6 +29,11 @@ def matrix_divided(matrix, div):
         if not all(isinstance(num, (int, float)) for num in row):
             raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
+        # Check if matrix contains NaN or Infinity
+        for num in row:
+            if num != num or num in [float('inf'), -float('inf')]:
+                raise ValueError("matrix contains NaN or infinity")
+
     # Check if all rows have the same size
     row_length = len(matrix[0])
     if not all(len(row) == row_length for row in matrix):
@@ -36,10 +42,14 @@ def matrix_divided(matrix, div):
     # Check if div is a number (int or float)
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    
+
     # Check for division by zero
     if div == 0:
         raise ZeroDivisionError("division by zero")
+
+    # Check for NaN or infinity in div
+    if div != div or div in [float('inf'), -float('inf')]:
+        raise ValueError("div cannot be NaN or infinity")
     
     # Perform the division and round each result to 2 decimal places
     new_matrix = [[round(num / div, 2) for num in row] for row in matrix]
