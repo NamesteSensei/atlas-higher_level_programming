@@ -25,7 +25,7 @@ class Rectangle:
     __str__():
         Provides a string representation of the rectangle using '#'.
     __repr__():
-        Provides a string representation to recreate the object.
+        Provides a string representation in the format used for object memory addresses.
     """
 
     def __init__(self, width=0, height=0):
@@ -90,5 +90,6 @@ class Rectangle:
         return "\n".join(["#" * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Returns a string representation to recreate the object."""
-        return f"Rectangle({self.width}, {self.height})"
+        """Returns a string representation in the format '<Rectangle object at memory_address>'."""
+        return f"<Rectangle object at {hex(id(self))}>"
+
