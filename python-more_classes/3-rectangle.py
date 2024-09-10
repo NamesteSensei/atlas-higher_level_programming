@@ -90,6 +90,9 @@ class Rectangle:
         return "\n".join(["#" * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Returns a string representation in the format '<Rectangle object at memory_address>'."""
-        return f"<Rectangle object at {hex(id(self))}>"
+        """Returns a string representation with module and class name.
+        
+        The format should be: <3-rectangle.Rectangle object at memory_address>
+        """
+        return f"<3-rectangle.Rectangle object at {hex(id(self))}>"
 
