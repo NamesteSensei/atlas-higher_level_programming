@@ -26,6 +26,8 @@ class Rectangle:
         Provides a string representation of the rectangle using '#'.
     __repr__():
         Provides a string representation to recreate the object using eval().
+    __del__():
+        Prints a message when the instance of the rectangle is deleted.
     """
 
     def __init__(self, width=0, height=0):
@@ -95,3 +97,7 @@ class Rectangle:
         The format should be: Rectangle(width, height)
         """
         return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """Prints 'Bye rectangle...' when the instance is deleted."""
+        print("Bye rectangle...")
