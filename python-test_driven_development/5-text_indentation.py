@@ -10,10 +10,10 @@ the following characters: '.', '?', and ':'.
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each of these characters: '.', '?', and ':'.
-    
+
     Args:
     text (str): The text to be printed.
-    
+
     Raises:
     TypeError: If the input is not a string.
     """
@@ -24,7 +24,7 @@ def text_indentation(text):
     while i < len(text):
         # Print the current character
         print(text[i], end="")
-        
+
         # If a punctuation mark is found, print two new lines
         if text[i] in ".?:":
             print("\n")
