@@ -9,16 +9,37 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initialize a new Square instance."""
         super().__init__(size, size, x, y, id)
-        if type(size) is not int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size <= 0:
             raise ValueError("size must be > 0")
+
+    @property
+    def size(self):
+        """Get the size of the square."""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Set the size of the square, updating both width and height."""
+        self.width = value
+        self.height = value
+
+    def area(self):
+        """Calculate and return the area of the square."""
+        return self.width * self.height
+
+    def display(self):
+        """Print the Square using the `#` character."""
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Square."""
         return {
             'id': self.id,
-            'size': self.width,  # Square uses width for size
+            'size': self.width,
             'x': self.x,
             'y': self.y
         }
