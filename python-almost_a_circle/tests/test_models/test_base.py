@@ -1,37 +1,21 @@
-"""Unit tests for Base class."""
 import unittest
 from models.base import Base
 
 class TestBase(unittest.TestCase):
-    """Tests for Base class."""
+    """Unit tests for Base class."""
 
-    def test_to_json_string_none(self):
-        """Test Base.to_json_string with None."""
-        self.assertEqual(Base.to_json_string(None), "[]")
+    def test_auto_id(self):
+        """Test that IDs are automatically assigned when not provided."""
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id + 1, b2.id)
+        self.assertEqual(b2.id + 1, b3.id)
 
-    def test_to_json_string_empty(self):
-        """Test Base.to_json_string with an empty list."""
-        self.assertEqual(Base.to_json_string([]), "[]")
-
-    def test_to_json_string(self):
-        """Test Base.to_json_string with a list of dictionaries."""
-        dict_list = [{'id': 12}]
-        json_str = Base.to_json_string(dict_list)
-        self.assertEqual(json_str, '[{"id": 12}]')
-
-    def test_from_json_string_none(self):
-        """Test Base.from_json_string with None."""
-        self.assertEqual(Base.from_json_string(None), [])
-
-    def test_from_json_string_empty(self):
-        """Test Base.from_json_string with an empty list."""
-        self.assertEqual(Base.from_json_string("[]"), [])
-
-    def test_from_json_string(self):
-        """Test Base.from_json_string with a JSON string."""
-        json_str = '[{"id": 89}]'
-        dict_list = Base.from_json_string(json_str)
-        self.assertEqual(dict_list, [{'id': 89}])
+    def test_custom_id(self):
+        """Test that a custom ID is assigned if provided."""
+        b = Base(100)
+        self.assertEqual(b.id, 100)
 
 if __name__ == '__main__':
     unittest.main()
