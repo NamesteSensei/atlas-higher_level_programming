@@ -35,6 +35,10 @@ class Square(Rectangle):
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
+    def __str__(self):
+        """Return a string representation of the square."""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
     def to_dictionary(self):
         """Returns the dictionary representation of a Square."""
         return {
