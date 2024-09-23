@@ -38,6 +38,26 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, "4")
 
+    def test_zero_width(self):
+        """Test Rectangle(0, 2) raises ValueError for width == 0."""
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_zero_height(self):
+        """Test Rectangle(1, 0) raises ValueError for height == 0."""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_negative_x(self):
+        """Test Rectangle(1, 2, -3) raises ValueError for negative x."""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+
+    def test_negative_y(self):
+        """Test Rectangle(1, 2, 3, -4) raises ValueError for negative y."""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
     def test_area(self):
         """Test area calculation."""
         r = Rectangle(3, 2)
