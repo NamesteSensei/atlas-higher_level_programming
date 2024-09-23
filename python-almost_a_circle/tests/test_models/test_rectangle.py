@@ -68,6 +68,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
 
+    def test_str_method(self):
+        """Test __str__() method for Rectangle."""
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
     def test_area(self):
         """Test area calculation."""
         r = Rectangle(3, 2)
