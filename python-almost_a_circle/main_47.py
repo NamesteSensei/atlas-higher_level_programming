@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Manual test for Rectangle save_to_file with None."""
+"""Manual test for Rectangle.save_to_file(None)."""
 
 from models.rectangle import Rectangle
 
-# Test save_to_file with None
+# Call save_to_file with None
 Rectangle.save_to_file(None)
 
-# Read and print the content of the file to verify it saved "[]"
+# Open the file and print its contents to verify the result
 with open("Rectangle.json", "r") as file:
-    print(file.read())  # Expected output: []
+    content = file.read()
+    print(content)  # Expected output: []
