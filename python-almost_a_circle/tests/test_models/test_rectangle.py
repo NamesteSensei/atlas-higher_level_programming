@@ -5,6 +5,7 @@ import unittest
 from models.rectangle import Rectangle
 from io import StringIO
 from unittest.mock import patch
+import os  # Import to handle file operations
 
 class TestRectangle(unittest.TestCase):
     """Unit tests for Rectangle class."""
@@ -109,6 +110,20 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.height, 2)
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
+
+    # Adding the new test here for save_to_file(None)
+    def test_save_to_file_none(self):
+        """Test Rectangle.save_to_file(None) saves an empty list."""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    # Optionally, we can also test for an empty list
+    def test_save_to_file_empty_list(self):
+        """Test Rectangle.save_to_file([]) saves an empty list."""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
 if __name__ == '__main__':
     unittest.main()
