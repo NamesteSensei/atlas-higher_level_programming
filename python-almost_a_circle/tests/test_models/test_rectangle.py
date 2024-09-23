@@ -125,5 +125,18 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
+    # Adding the new test for save_to_file([Rectangle(1, 2)])
+    def test_save_to_file_with_rectangles(self):
+        """Test Rectangle.save_to_file([Rectangle(1, 2)]) saves the correct data."""
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(3, 4, 5, 6, 7)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            file_content = file.read()
+            self.assertIn('"width": 1', file_content)
+            self.assertIn('"height": 2', file_content)
+            self.assertIn('"id": 7', file_content)
+
 if __name__ == '__main__':
     unittest.main()
+
