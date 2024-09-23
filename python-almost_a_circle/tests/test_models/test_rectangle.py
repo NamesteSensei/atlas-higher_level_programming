@@ -48,6 +48,16 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
 
+    def test_negative_width(self):
+        """Test Rectangle(-1, 2) raises ValueError for negative width."""
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_negative_height(self):
+        """Test Rectangle(1, -2) raises ValueError for negative height."""
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
     def test_negative_x(self):
         """Test Rectangle(1, 2, -3) raises ValueError for negative x."""
         with self.assertRaises(ValueError):
