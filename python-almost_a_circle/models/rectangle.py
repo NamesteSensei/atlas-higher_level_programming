@@ -3,28 +3,53 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represents a rectangle, inherits from Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle instance."""
+        """Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the rectangle.
+            y (int): The y-coordinate of the rectangle.
+            id (int): The id of the rectangle (inherited from Base).
+        """
         super().__init__(id)
         if not isinstance(width, int):
-            raise TypeError("width must be an integer")
+            raise TypeError(
+                "width must be an integer"
+            )
         if not isinstance(height, int):
-            raise TypeError("height must be an integer")
+            raise TypeError(
+                "height must be an integer"
+            )
         if not isinstance(x, int):
-            raise TypeError("x must be an integer")
+            raise TypeError(
+                "x must be an integer"
+            )
         if not isinstance(y, int):
-            raise TypeError("y must be an integer")
+            raise TypeError(
+                "y must be an integer"
+            )
         if width <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError(
+                "width must be > 0"
+            )
         if height <= 0:
-            raise ValueError("height must be > 0")
+            raise ValueError(
+                "height must be > 0"
+            )
         if x < 0:
-            raise ValueError("x must be >= 0")
+            raise ValueError(
+                "x must be >= 0"
+            )
         if y < 0:
-            raise ValueError("y must be >= 0")
+            raise ValueError(
+                "y must be >= 0"
+            )
         self.width = width
         self.height = height
         self.x = x
@@ -42,7 +67,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return a string representation of the rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (
+            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+            f"{self.width}/{self.height}"
+        )
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle."""
