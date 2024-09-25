@@ -1,62 +1,65 @@
 #!/usr/bin/python3
-"""Square class that inherits from Rectangle."""
+"""Base class module: Manages id attribute for all derived classes."""
 
-from models.rectangle import Rectangle
+import json
 
 
-class Square(Rectangle):
-    """Represents a square, inherits from Rectangle."""
+class Base:
+    """Base class for all other classes in this project."""
 
-    def __init__(self, size, x=0, y=0, id=None):
-        """Initialize a new Square instance."""
-        super().__init__(size, size, x, y, id)
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size <= 0:
-            raise ValueError("size must be > 0")
+    # Private class attribute to track the number of objects
+    __nb_objects = 0
 
-    @property
-    def size(self):
-        """Get the size of the square."""
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """Set the size of the square, updating both width and height."""
-        self.width = value
-        self.height = value
-
-    def area(self):
-        """Calculate and return the area of the square."""
-        return self.width * self.height
-
-    def display(self):
-        """Print the Square using the `#` character."""
-        print("\n" * self.y, end="")
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
-
-    def __str__(self):
-        """Return a string representation of the square."""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    def to_dictionary(self):
-        """Returns the dictionary representation of a Square."""
-        return {
-            'id': self.id,
-            'size': self.width,
-            'x': self.x,
-            'y': self.y
-        }
-
-    def update(self, *args, **kwargs):
-        """Assigns attributes via args or kwargs."""
-        attributes = ['id', 'size', 'x', 'y']
-        if args:
-            for i, arg in enumerate(args):
-                if i < len(attributes):
-                    setattr(self, attributes[i], arg)
+    def __init__(self, id=None):
+        """Initialize the Base class with optional id."""
+        if id is not None:
+            self.id = id
         else:
-            for key, value in kwargs.items():
-                if key in attributes:
-                    setattr(self, key, value)
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Convert list of dictionaries to a JSON string."""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Convert JSON string to a list of dictionaries."""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Write the JSON string representation of list_objs to a file."""
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                list_dicts = [obj.to_dictionary() for obj in list_objs]
+                f.write(cls.to_json_string(list_dicts))
+
+    @classmethod
+    def load_from_file(cls):
+        """Load a list of instances from a JSON file."""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as f:
+                list_dicts = cls.from_json_string(f.read())
+                return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return an instance with all attributes set."""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
