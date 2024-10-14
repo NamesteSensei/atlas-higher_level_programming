@@ -1,3 +1,6 @@
+-- Select the database 
+USE hbtn_0c_0;
+
 -- Task 17: Convert database, table, and field to utf8mb4
 -- This script converts the hbtn_0c_0 database, the first_table, and the name field to utf8mb4.
 
