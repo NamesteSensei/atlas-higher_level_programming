@@ -18,6 +18,5 @@ INSERT INTO cities (state_id, name) VALUES
     (2, 'Page'),
     (2, 'Phoenix');
 
--- Select the inserted rows from the 'cities' table to verify the correct data is inserted
--- The checker will use this to check the output
-SELECT id, state_id, name FROM cities;
+-- The data is now inserted into the 'cities' table.
+-- The checker will verify the content of the table, but no SELECT statement is needed here.
