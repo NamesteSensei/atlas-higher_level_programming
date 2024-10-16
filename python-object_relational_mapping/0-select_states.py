@@ -1,12 +1,20 @@
 #!/usr/bin/python3
-import MySQLdb
+"""
+This script lists all states from the database hbtn_0e_0_usa.
+It connects to a MySQL server running on localhost at port 3306.
+It takes MySQL username, password, and database name as arguments.
+"""
+
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
+    # Get MySQL credentials and database name from arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
+    # Connect to MySQL database
     db = MySQLdb.connect(
         host="localhost",
         user=username,
@@ -15,12 +23,17 @@ if __name__ == "__main__":
         port=3306
     )
 
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    # Create a cursor object
+    cur = db.cursor()
 
-    rows = cursor.fetchall()
+    # Execute the SQL query
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+
+    # Fetch all rows and display them
+    rows = cur.fetchall()
     for row in rows:
         print(row)
 
-    cursor.close()
+    # Close cursor and connection
+    cur.close()
     db.close()
