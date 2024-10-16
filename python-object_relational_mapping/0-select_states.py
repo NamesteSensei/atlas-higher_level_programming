@@ -23,8 +23,13 @@ if __name__ == "__main__":
 
     # Fetch and display the results
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+
+    # Handle case: No records
+    if len(rows) == 0:
+        print("No records found.")
+    else:
+        for row in rows:
+            print(row)
 
     # Close cursor and connection
     cur.close()
