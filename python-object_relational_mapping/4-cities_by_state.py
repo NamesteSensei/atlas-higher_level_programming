@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that lists all states with a name starting with 'N' from the database hbtn_0e_0_usa.
+A script that lists all cities from the database hbtn_0e_4_usa.
 """
 
 import MySQLdb
@@ -18,18 +18,18 @@ if __name__ == "__main__":
     # Create a cursor to execute queries
     cur = db.cursor()
 
-    # Execute the query to select states starting with 'N'
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    # Execute a single query to get all cities and join states for display
+    cur.execute("""
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC
+    """)
 
     # Fetch and display the results
     rows = cur.fetchall()
-
-    # Handle case: No records
-    if len(rows) == 0:
-        print("No records found.")
-    else:
-        for row in rows:
-            print(row)
+    for row in rows:
+        print(row)
 
     # Close cursor and connection
     cur.close()
