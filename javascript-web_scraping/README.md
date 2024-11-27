@@ -1,39 +1,33 @@
-# JavaScript Web Scraping Project
+# JavaScript Web Scraping
 
-## Overview
-
-This project is designed to explore JavaScript's capabilities in web scraping, file handling, and API interaction. Through a series of tasks, you will learn how to manipulate JSON data, make API requests, and use Node.js modules like `fs` for file operations.
-
----
+This project is focused on learning web scraping and handling JSON data using JavaScript.
 
 ## Learning Objectives
 
-By completing this project, you will:
-
-- Understand why JavaScript programming is powerful and versatile.
-- Learn to manipulate JSON data effectively.
-- Make HTTP requests using the `request` and `fetch` APIs.
-- Perform file read and write operations using Node.js's `fs` module.
-- Scrape web content and interact with RESTful APIs.
-
----
+- Why JavaScript programming is amazing
+- How to manipulate JSON data
+- How to use `request` and `fetch` APIs
+- How to read and write files using the `fs` module
 
 ## Requirements
 
-### General
+- **Environment**: Ubuntu 14.04 LTS
+- **Node.js Version**: 10.14.x
+- **Code Style**: `semistandard`
+- **Modules Used**: 
+  - `fs` (File System)
+  - `request` (for HTTP requests)
 
-- Editors: `vi`, `vim`, `emacs`.
-- Environment: Ubuntu 14.04 LTS with Node.js (version 10.14.x).
-- Code must conform to `semistandard` coding style (Standard with semicolons).
-- All files must:
-  - End with a new line.
-  - Start with `#!/usr/bin/node`.
-  - Be executable.
+## Tasks Overview
 
-### Installation
+1. **Read and Print a File**: Write a script that reads and prints the content of a file.
+2. **Write to a File**: Write a script that writes a string to a file.
+3. **GET Request Status Code**: Write a script that displays the status code of a GET request.
+4. **Star Wars API**: Write a script that fetches and prints Star Wars movie titles.
+5. **Count Completed Tasks**: Write a script that computes the number of completed tasks per user from an API.
 
-#### Node.js
-Install Node.js (version 10.x):
-```bash
-$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
+## How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repository-url>
